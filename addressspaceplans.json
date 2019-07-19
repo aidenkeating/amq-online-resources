@@ -1,0 +1,193 @@
+[
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressSpacePlan",
+    "metadata": {
+      "name": "brokered-single-broker",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Single Broker",
+      "displayOrder": 0,
+      "infraConfigRef": "default",
+      "shortDescription": "Single Broker instance",
+      "longDescription": "Single Broker plan where you can create an infinite number of queues until the system falls over.",
+      "addressSpaceType": "brokered",
+      "resourceLimits": {
+        "broker": 1.9
+      },
+      "addressPlans": [
+        "brokered-queue",
+        "brokered-topic"
+      ]
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressSpacePlan",
+    "metadata": {
+      "name": "standard-medium",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Medium",
+      "displayOrder": 0,
+      "infraConfigRef": "default",
+      "shortDescription": "Messaging infrastructure based on Apache Qpid Dispatch Router and Apache ActiveMQ Artemis.",
+      "longDescription": "Messaging infrastructure based on Apache Qpid Dispatch Router and Apache ActiveMQ Artemis. This plan allows up to 3 routers and 3 broker in total, and is suitable for applications using small address plans and few addresses.",
+      "addressSpaceType": "standard",
+      "resourceLimits": {
+        "router": 3.0,
+        "broker": 3.0,
+        "aggregate": 6.0
+      },
+      "addressPlans": [
+        "standard-small-anycast",
+        "standard-medium-anycast",
+        "standard-large-anycast",
+        "standard-small-multicast",
+        "standard-medium-multicast",
+        "standard-large-multicast",
+        "standard-small-queue",
+        "standard-medium-queue",
+        "standard-large-queue",
+        "standard-xlarge-queue",
+        "standard-small-topic",
+        "standard-medium-topic",
+        "standard-large-topic",
+        "standard-xlarge-topic",
+        "standard-small-subscription",
+        "standard-medium-subscription",
+        "standard-large-subscription"
+      ]
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressSpacePlan",
+    "metadata": {
+      "name": "standard-small",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Small",
+      "displayOrder": 0,
+      "infraConfigRef": "default-minimal",
+      "shortDescription": "Messaging infrastructure based on Apache Qpid Dispatch Router and Apache ActiveMQ Artemis",
+      "longDescription": "Messaging infrastructure based on Apache Qpid Dispatch Router and Apache ActiveMQ Artemis. This plan allows up to 1 router and 1 broker in total, and is suitable for small applications using small address plans and few addresses.",
+      "addressSpaceType": "standard",
+      "resourceLimits": {
+        "router": 1.0,
+        "broker": 1.0,
+        "aggregate": 2.0
+      },
+      "addressPlans": [
+        "standard-small-anycast",
+        "standard-medium-anycast",
+        "standard-large-anycast",
+        "standard-small-multicast",
+        "standard-medium-multicast",
+        "standard-large-multicast",
+        "standard-small-queue",
+        "standard-medium-queue",
+        "standard-large-queue",
+        "standard-small-topic",
+        "standard-medium-topic",
+        "standard-large-topic",
+        "standard-small-subscription",
+        "standard-medium-subscription",
+        "standard-large-subscription"
+      ]
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressSpacePlan",
+    "metadata": {
+      "name": "standard-unlimited-with-mqtt",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Unlimited With MQTT",
+      "displayOrder": 0,
+      "infraConfigRef": "default-with-mqtt",
+      "shortDescription": "Messaging infrastructure based on Apache Qpid Dispatch Router and Apache ActiveMQ Artemis and MQTT support.",
+      "longDescription": "Messaging infrastructure based on Apache Qpid Dispatch Router and Apache ActiveMQ Artemis and MQTT support. This plan allows an unlimited number of routers (minimum 2) and brokers, and is suitable for applications where you do not want to impose any restrictions.",
+      "addressSpaceType": "standard",
+      "resourceLimits": {
+        "router": 10000.0,
+        "broker": 10000.0,
+        "aggregate": 10000.0
+      },
+      "addressPlans": [
+        "standard-small-anycast",
+        "standard-medium-anycast",
+        "standard-large-anycast",
+        "standard-small-multicast",
+        "standard-medium-multicast",
+        "standard-large-multicast",
+        "standard-small-queue",
+        "standard-medium-queue",
+        "standard-large-queue",
+        "standard-xlarge-queue",
+        "standard-small-topic",
+        "standard-medium-topic",
+        "standard-large-topic",
+        "standard-xlarge-topic",
+        "standard-small-subscription",
+        "standard-medium-subscription",
+        "standard-large-subscription"
+      ]
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressSpacePlan",
+    "metadata": {
+      "name": "standard-unlimited",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Unlimited",
+      "displayOrder": 0,
+      "infraConfigRef": "default",
+      "shortDescription": "Messaging infrastructure based on Apache Qpid Dispatch Router and Apache ActiveMQ Artemis.",
+      "longDescription": "Messaging infrastructure based on Apache Qpid Dispatch Router and Apache ActiveMQ Artemis. This plan allows an unlimited number of routers and brokers, and is suitable for applications where you do not want to impose any restrictions.",
+      "addressSpaceType": "standard",
+      "resourceLimits": {
+        "router": 10000.0,
+        "broker": 10000.0,
+        "aggregate": 10000.0
+      },
+      "addressPlans": [
+        "standard-small-anycast",
+        "standard-medium-anycast",
+        "standard-large-anycast",
+        "standard-small-multicast",
+        "standard-medium-multicast",
+        "standard-large-multicast",
+        "standard-small-queue",
+        "standard-medium-queue",
+        "standard-large-queue",
+        "standard-xlarge-queue",
+        "standard-small-topic",
+        "standard-medium-topic",
+        "standard-large-topic",
+        "standard-xlarge-topic",
+        "standard-small-subscription",
+        "standard-medium-subscription",
+        "standard-large-subscription"
+      ]
+    }
+  }
+]

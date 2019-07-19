@@ -1,0 +1,98 @@
+[
+  {
+    "apiVersion": "admin.enmasse.io/v1beta1",
+    "kind": "StandardInfraConfig",
+    "metadata": {
+      "name": "default-minimal",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "admin": {
+        "resources": {
+          "memory": "512Mi"
+        }
+      },
+      "broker": {
+        "resources": {
+          "memory": "512Mi",
+          "storage": "2Gi"
+        },
+        "addressFullPolicy": "FAIL"
+      },
+      "router": {
+        "minReplicas": 1,
+        "resources": {
+          "memory": "256Mi"
+        },
+        "linkCapacity": 250
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta1",
+    "kind": "StandardInfraConfig",
+    "metadata": {
+      "name": "default-with-mqtt",
+      "labels": {
+        "app": "enmasse"
+      },
+      "annotations": {
+        "enmasse.io/with-mqtt": "true"
+      }
+    },
+    "spec": {
+      "admin": {
+        "resources": {
+          "memory": "512Mi"
+        }
+      },
+      "broker": {
+        "resources": {
+          "memory": "512Mi",
+          "storage": "2Gi"
+        },
+        "addressFullPolicy": "FAIL"
+      },
+      "router": {
+        "minReplicas": 2,
+        "resources": {
+          "memory": "512Mi"
+        },
+        "linkCapacity": 250
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta1",
+    "kind": "StandardInfraConfig",
+    "metadata": {
+      "name": "default",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "admin": {
+        "resources": {
+          "memory": "512Mi"
+        }
+      },
+      "broker": {
+        "resources": {
+          "memory": "512Mi",
+          "storage": "2Gi"
+        },
+        "addressFullPolicy": "FAIL"
+      },
+      "router": {
+        "minReplicas": 2,
+        "resources": {
+          "memory": "512Mi"
+        },
+        "linkCapacity": 250
+      }
+    }
+  }
+]

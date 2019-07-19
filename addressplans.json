@@ -1,0 +1,393 @@
+[
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "brokered-queue",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Brokered Queue",
+      "displayOrder": 0,
+      "shortDescription": "Creates a queue on a broker.",
+      "longDescription": "Creates a queue on a broker.",
+      "addressType": "queue",
+      "resources": {
+        "broker": 0.0
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "brokered-topic",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Brokered Topic",
+      "displayOrder": 0,
+      "shortDescription": "Creates a topic on a broker.",
+      "longDescription": "Creates a topic on a broker.",
+      "addressType": "topic",
+      "resources": {
+        "broker": 0.0
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-large-anycast",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Large Anycast",
+      "displayOrder": 2,
+      "shortDescription": "Creates a large anycast address.",
+      "longDescription": "Creates a large anycast address where messages go via a router that does not take ownership of the messages.",
+      "addressType": "anycast",
+      "resources": {
+        "router": 0.1
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-large-multicast",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Large Multicast",
+      "displayOrder": 2,
+      "shortDescription": "Creates a large multicast address.",
+      "longDescription": "Creates a large multicast address where messages go via a router that does not take ownership of the messages.",
+      "addressType": "multicast",
+      "resources": {
+        "router": 0.1
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-large-queue",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Large Queue",
+      "displayOrder": 2,
+      "shortDescription": "Creates a large queue backed by a dedicated broker.",
+      "longDescription": "Creates a large queue backed by a dedicated broker.",
+      "addressType": "queue",
+      "resources": {
+        "router": 0.1,
+        "broker": 1.0
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-large-subscription",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Large Subscription",
+      "displayOrder": 2,
+      "shortDescription": "Creates a large durable subscription on a topic.",
+      "longDescription": "Creates a large durable subscription on a topic, which is then accessed as a distinct address.",
+      "addressType": "subscription",
+      "resources": {
+        "router": 0.1,
+        "broker": 1.0
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-large-topic",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Large Topic",
+      "displayOrder": 2,
+      "shortDescription": "Creates a large topic backed by a dedicated broker.",
+      "longDescription": "Creates a large topic backed by a dedicated broker.",
+      "addressType": "topic",
+      "resources": {
+        "router": 0.1,
+        "broker": 1.0
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-medium-anycast",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Medium Anycast",
+      "displayOrder": 1,
+      "shortDescription": "Creates a medium anycast address.",
+      "longDescription": "Creates a medium anycast address where messages go via a router that does not take ownership of the messages.",
+      "addressType": "anycast",
+      "resources": {
+        "router": 0.01
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-medium-multicast",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Medium Multicast",
+      "displayOrder": 1,
+      "shortDescription": "Creates a medium multicast address.",
+      "longDescription": "Creates a medium multicast address where messages go via a router that does not take ownership of the messages.",
+      "addressType": "multicast",
+      "resources": {
+        "router": 0.01
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-medium-queue",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Medium Queue",
+      "displayOrder": 1,
+      "shortDescription": "Creates a medium sized queue sharing underlying broker with other queues.",
+      "longDescription": "Creates a medium sized queue sharing underlying broker with other queues.",
+      "addressType": "queue",
+      "resources": {
+        "router": 0.01,
+        "broker": 0.1
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-medium-subscription",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Medium Subscription",
+      "displayOrder": 1,
+      "shortDescription": "Creates a medium durable subscription on a topic.",
+      "longDescription": "Creates a medium durable subscription on a topic, which is then accessed as a distinct address.",
+      "addressType": "subscription",
+      "resources": {
+        "router": 0.01,
+        "broker": 0.1
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-medium-topic",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Medium Topic",
+      "displayOrder": 1,
+      "shortDescription": "Creates a medium sized topic sharing underlying broker with other topics.",
+      "longDescription": "Creates a medium sized topic sharing underlying broker with other topics.",
+      "addressType": "topic",
+      "resources": {
+        "router": 0.01,
+        "broker": 0.1
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-small-anycast",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Small Anycast",
+      "displayOrder": 0,
+      "shortDescription": "Creates a small anycast address.",
+      "longDescription": "Creates a small anycast address where messages go via a router that does not take ownership of the messages.",
+      "addressType": "anycast",
+      "resources": {
+        "router": 0.001
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-small-multicast",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Small Multicast",
+      "displayOrder": 0,
+      "shortDescription": "Creates a small multicast address.",
+      "longDescription": "Creates a small multicast address where messages go via a router that does not take ownership of the messages.",
+      "addressType": "multicast",
+      "resources": {
+        "router": 0.001
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-small-queue",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Small Queue",
+      "displayOrder": 0,
+      "shortDescription": "Creates a small queue sharing underlying broker with other queues.",
+      "longDescription": "Creates a small queue sharing underlying broker with other queues.",
+      "addressType": "queue",
+      "resources": {
+        "router": 0.001,
+        "broker": 0.01
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-small-subscription",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Small Subscription",
+      "displayOrder": 0,
+      "shortDescription": "Creates a small durable subscription on a topic.",
+      "longDescription": "Creates a small durable subscription on a topic, which is then accessed as a distinct address.",
+      "addressType": "subscription",
+      "resources": {
+        "router": 0.001,
+        "broker": 0.01
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-small-topic",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Small Topic",
+      "displayOrder": 0,
+      "shortDescription": "Creates a small topic sharing underlying broker with other topics.",
+      "longDescription": "Creates a small topic sharing underlying broker with other topics.",
+      "addressType": "topic",
+      "resources": {
+        "router": 0.001,
+        "broker": 0.01
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-xlarge-queue",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Extra Large Queue",
+      "displayOrder": 3,
+      "shortDescription": "Creates an extra large queue backed by 2 brokers.",
+      "longDescription": "Creates an extra large queue backed by 2 brokers.",
+      "addressType": "queue",
+      "resources": {
+        "router": 0.2,
+        "broker": 2.0
+      }
+    }
+  },
+  {
+    "apiVersion": "admin.enmasse.io/v1beta2",
+    "kind": "AddressPlan",
+    "metadata": {
+      "name": "standard-xlarge-topic",
+      "labels": {
+        "app": "enmasse"
+      }
+    },
+    "spec": {
+      "displayName": "Extra Large Topic",
+      "displayOrder": 3,
+      "shortDescription": "Creates an extra large topic backed by 2 brokers.",
+      "longDescription": "Creates an extra large topic backed by 2 brokers.",
+      "addressType": "topic",
+      "resources": {
+        "router": 0.2,
+        "broker": 2.0
+      }
+    }
+  }
+]
